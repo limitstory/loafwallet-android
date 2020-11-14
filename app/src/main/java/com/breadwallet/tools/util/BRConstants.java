@@ -116,7 +116,7 @@ public class BRConstants {
      */
     public static final int CURRENT_UNIT_PHOTONS = 0; // formerly CURRENT_UNIT_BITS
     public static final int CURRENT_UNIT_LITES = 1; // formerly CURRENT_UNIT_MBITS
-    public static final int CURRENT_UNIT_LITECOINS = 2;
+    public static final int CURRENT_UNIT_PYEONGTAEKCOINS = 2;
 
     public static final String bitcoinLowercase = "\u0142";
     public static final String bitcoinUppercase = "\u0141";
@@ -132,8 +132,8 @@ public class BRConstants {
      */
     public static final Pair[] DONATION_ADDRESSES = new Pair[]
             {
-                    Pair.create("Litewallet Hardware Fundraiser", "MJ4W7NZya4SzE7R6xpEVdamGCimaQYPiWu"),
-                    Pair.create("Litecoin Foundation", "MVZj7gBRwcVpa9AAWdJm8A3HqTst112eJe")
+                    Pair.create("Pyeongtaekwallet Hardware Fundraiser", "MJ4W7NZya4SzE7R6xpEVdamGCimaQYPiWu"),
+                    Pair.create("Pyeongtaekcoin Foundation", "MVZj7gBRwcVpa9AAWdJm8A3HqTst112eJe")
             };
     public static final long DONATION_AMOUNT = 1_800_000;
 
@@ -149,9 +149,9 @@ public class BRConstants {
     public static final String fingerprintSpendingLimit = "fingerprint-spending-limit";
     public static final String transactionDetails = "transaction-details";
     //    public static final String manageWallet = "manage-wallet";
-    public static final String receive = "receive-litecoin";
+    public static final String receive = "receive-pyeongtaekcoin";
     public static final String requestAmount = "request-amount";
-    public static final String send = "send-litecoin";
+    public static final String send = "send-pyeongtaekcoin";
     public static final String walletDisabled = "wallet-disabled";
     public static final String resetPinWithPaperKey = "reset-pin-paper-key";
     public static final String setPin = "set-pin";
@@ -163,11 +163,11 @@ public class BRConstants {
     public static final String loopBug = "android-loop-bug";
 
     public static final String TWITTER_LINK = "https://twitter.com/loafwallet";
-    public static final String REDDIT_LINK = "https://www.reddit.com/r/litecoin";
+    public static final String REDDIT_LINK = "https://www.reddit.com/r/pyeongtaekcoin";
     public static final String WEB_LINK = "https://loafwallet.org";
     public static final String TOS_LINK = "https://loafwallet.org/tos";
 
-    public static final String BLOCK_EXPLORER_BASE_URL = BuildConfig.LITECOIN_TESTNET ? "https://testnet.litecore.io/tx/" : "https://insight.litecore.io/tx/";
+    public static final String BLOCK_EXPLORER_BASE_URL = BuildConfig.PYEONGTAEKCOIN_TESTNET ? "https://testnet.litecore.io/tx/" : "https://insight.litecore.io/tx/";
 
     private BRConstants() {
     }
@@ -176,8 +176,8 @@ public class BRConstants {
     public static final String _20191105_AL = "APP_LAUNCHED";
     public static final String _20191105_VSC = "VISIT_SEND_CONTROLLER";
     public static final String _20202116_VRC = "VISIT_RECEIVE_CONTROLLER";
-    public static final String _20191105_DSL = "DID_SEND_LTC";
-    public static final String _20191105_DULP = "DID_UPDATE_LTC_PRICE";
+    public static final String _20191105_DSL = "DID_SEND_PTC";
+    public static final String _20191105_DULP = "DID_UPDATE_PTC_PRICE";
     public static final String _20191105_DTBT = "DID_TAP_BUY_TAB";
     public static final String _20200111_DEDG = "DID_ENTER_DISPATCH_GROUP";
     public static final String _20200111_DLDG = "DID_LEAVE_DISPATCH_GROUP";

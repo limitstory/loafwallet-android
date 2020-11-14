@@ -30,10 +30,10 @@ import com.breadwallet.wallet.BRWalletManager;
 import java.math.BigDecimal;
 
 /**
- * Litewallet
+ * Pyeongtaekwallet
  * Created by Mohamed Barry on 3/2/20
  * email: mosadialiou@gmail.com
- * Copyright © 2020 Litecoin Foundation. All rights reserved.
+ * Copyright © 2020 Pyeongtaekcoin Foundation. All rights reserved.
  */
 public class DynamicDonationFragment extends Fragment {
 
@@ -50,7 +50,7 @@ public class DynamicDonationFragment extends Fragment {
 
     private SeekBar seekBar;
     private String selectedIso;
-    private boolean isLTCSwap = true;
+    private boolean isPTCSwap = true;
     private Pair<String, String> chosenAddress;
     private long mDonationAmount;
 
@@ -64,7 +64,7 @@ public class DynamicDonationFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         selectedIso = BRSharedPrefs.getIso(getContext());
-        isLTCSwap = BRSharedPrefs.getPreferredLTC(getContext());
+        isPTCSwap = BRSharedPrefs.getPreferredPTC(getContext());
 
         addressVal = view.findViewById(R.id.addressVal);
 
@@ -221,8 +221,8 @@ public class DynamicDonationFragment extends Fragment {
     }
 
     private String formatLtcAmount(BigDecimal amount) {
-        BigDecimal ltcAmount = BRExchange.getBitcoinForSatoshis(getContext(), amount);
-        return BRCurrency.getFormattedCurrencyString(getContext(), "LTC", ltcAmount);
+        BigDecimal ptcAmount = BRExchange.getBitcoinForSatoshis(getContext(), amount);
+        return BRCurrency.getFormattedCurrencyString(getContext(), "PTC", ptcAmount);
     }
 
     private String formatIsoAmount(BigDecimal amount) {
@@ -230,12 +230,12 @@ public class DynamicDonationFragment extends Fragment {
         return BRCurrency.getFormattedCurrencyString(getContext(), selectedIso, fiatAmount);
     }
 
-    private String formatResultAmount(String ltcAmount, String isoAmount) {
+    private String formatResultAmount(String ptcAmount, String isoAmount) {
         String format = "%s (%s)";
-        if (isLTCSwap) {
-            return String.format(format, ltcAmount, isoAmount);
+        if (isPTCSwap) {
+            return String.format(format, ptcAmount, isoAmount);
         } else {
-            return String.format(format, isoAmount, ltcAmount);
+            return String.format(format, isoAmount, ptcAmount);
         }
     }
 }

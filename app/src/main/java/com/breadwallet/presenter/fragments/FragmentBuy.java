@@ -60,7 +60,7 @@ public class FragmentBuy extends Fragment {
     String baseUrl;
     public static boolean appVisible = false;
     private String onCloseUrl;
-    public static String URL_BUY_LTC = "https://buy.loafwallet.org";
+    public static String URL_BUY_PTC = "https://buy.loafwallet.org";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -110,7 +110,7 @@ public class FragmentBuy extends Fragment {
 
         //"https://buy.loafwallet.org/?address=\(currentWalletAddress)&code=\(currencyCode)&idate=\(timestamp)&uid=\(uuidString)"
         //https://buy.loafwallet.org/?address=LRG6pZZbJAd62Y8fbnBypk6Qd38oiSNCBf&code=USD&idate=1578021500&uid=3955B06D-69BD-4CAD-95D1-B151BD3FA0EA
-        baseUrl = URL_BUY_LTC;
+        baseUrl = URL_BUY_PTC;
         WebSettings webSettings = webView.getSettings();
         if (0 != (getActivity().getApplicationInfo().flags & ApplicationInfo.FLAG_DEBUGGABLE)) {
             WebView.setWebContentsDebuggingEnabled(true);
@@ -155,7 +155,7 @@ public class FragmentBuy extends Fragment {
         Log.e(TAG, "handle message: " + message);
         //webkit.messageHandlers.callback.postMessage('${[encoded]}')
 
-       //version=1&partner=litecoinfoundation&payment_flow_type=wallet&return_url=https%3A%2F%2Fbuy.loafwallet.org%2Fsuccess%2F&payment_id=b19e1e8b-3422-42f8-a68f-e7cbfedd2218&user_id=B7936F17-82E8-409D-9E80-BF24DC0FF4AE&destination_wallet%5Baddress%5D=LRG6pZZbJAd62Y8fbnBypk6Qd38oiSNCBf&destination_wallet%5Bcurrency%5D=LTC&fiat_total_amount%5Bamount%5D=274.95&fiat_total_amount%5Bcurrency%5D=USD&digital_total_amount%5Bamount%5D=5.45687994864113&digital_total_amount%5Bcurrency%5D=LTC&quote_id=ad207991-f5a8-4f5c-b75f-c9c138e67517
+       //version=1&partner=pyeongtaekcoinfoundation&payment_flow_type=wallet&return_url=https%3A%2F%2Fbuy.loafwallet.org%2Fsuccess%2F&payment_id=b19e1e8b-3422-42f8-a68f-e7cbfedd2218&user_id=B7936F17-82E8-409D-9E80-BF24DC0FF4AE&destination_wallet%5Baddress%5D=LRG6pZZbJAd62Y8fbnBypk6Qd38oiSNCBf&destination_wallet%5Bcurrency%5D=PTC&fiat_total_amount%5Bamount%5D=274.95&fiat_total_amount%5Bcurrency%5D=USD&digital_total_amount%5Bamount%5D=5.45687994864113&digital_total_amount%5Bcurrency%5D=PTC&quote_id=ad207991-f5a8-4f5c-b75f-c9c138e67517
 //        guard let response = message.body as? String else { return }
 //        print(response)
 //        guard let url = URL(string: "https://checkout.simplexcc.com/payments/new") else { return }

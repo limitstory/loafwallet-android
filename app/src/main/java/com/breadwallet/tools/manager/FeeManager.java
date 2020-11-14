@@ -8,15 +8,15 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
 /**
- * Litewallet
+ * Pyeongtaekwallet
  * Created by Mohamed Barry on 3/10/20
  * email: mosadialiou@gmail.com
- * Copyright © 2020 Litecoin Foundation. All rights reserved.
+ * Copyright © 2020 Pyeongtaekcoin Foundation. All rights reserved.
  */
 public final class FeeManager {
 
     // this is the default that matches the mobile-api if the server is unavailable
-    private static final long defaultEconomyFeePerKB = 2_500L; // From legacy minimum. default min is 1000 as Litecoin Core version v0.17.1
+    private static final long defaultEconomyFeePerKB = 2_500L; // From legacy minimum. default min is 1000 as Pyeongtaekcoin Core version v0.17.1
     private static final long defaultRegularFeePerKB = 2_5000L;
     private static final long defaultLuxuryFeePerKB = 66_746L;
     private static final long defaultTimestamp = 1583015199122L;

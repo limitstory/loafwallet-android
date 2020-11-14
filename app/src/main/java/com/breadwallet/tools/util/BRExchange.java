@@ -42,7 +42,7 @@ public class BRExchange {
 
     public static BigDecimal getMaxAmount(Context context, String iso) {
         final long MAX_BTC = 84000000;
-        if (iso.equalsIgnoreCase("LTC"))
+        if (iso.equalsIgnoreCase("PTC"))
             return getBitcoinForSatoshis(context, new BigDecimal(MAX_BTC * 100000000));
         CurrencyEntity ent = CurrencyDataSource.getInstance(context).getCurrencyByIso(iso);
         if (ent == null) return new BigDecimal(Integer.MAX_VALUE);
@@ -60,7 +60,7 @@ public class BRExchange {
             case BRConstants.CURRENT_UNIT_LITES:
                 result = new BigDecimal(String.valueOf(amount)).divide(new BigDecimal("100000"), 5, ROUNDING_MODE);
                 break;
-            case BRConstants.CURRENT_UNIT_LITECOINS:
+            case BRConstants.CURRENT_UNIT_PYEONGTAEKCOINS:
                 result = new BigDecimal(String.valueOf(amount)).divide(new BigDecimal("100000000"), 8, ROUNDING_MODE);
                 break;
         }
@@ -77,7 +77,7 @@ public class BRExchange {
             case BRConstants.CURRENT_UNIT_LITES:
                 result = new BigDecimal(String.valueOf(amount)).multiply(new BigDecimal("100000"));
                 break;
-            case BRConstants.CURRENT_UNIT_LITECOINS:
+            case BRConstants.CURRENT_UNIT_PYEONGTAEKCOINS:
                 result = new BigDecimal(String.valueOf(amount)).multiply(new BigDecimal("100000000"));
                 break;
         }
@@ -98,7 +98,7 @@ public class BRExchange {
                 case BRConstants.CURRENT_UNIT_LITES:
                     currencySymbolString = BRConstants.bitcoinLowercase;
                     break;
-                case BRConstants.CURRENT_UNIT_LITECOINS:
+                case BRConstants.CURRENT_UNIT_PYEONGTAEKCOINS:
                     currencySymbolString = BRConstants.bitcoinUppercase;
                     break;
             }
@@ -109,7 +109,7 @@ public class BRExchange {
     //get an iso amount from  satoshis
     public static BigDecimal getAmountFromSatoshis(Context app, String iso, BigDecimal amount) {
         BigDecimal result;
-        if (iso.equalsIgnoreCase("LTC")) {
+        if (iso.equalsIgnoreCase("PTC")) {
             result = getBitcoinForSatoshis(app, amount);
         } else {
             //multiply by 100 because core function localAmount accepts the smallest amount e.g. cents
@@ -126,7 +126,7 @@ public class BRExchange {
     //get satoshis from an iso amount
     public static BigDecimal getSatoshisFromAmount(Context app, String iso, BigDecimal amount) {
         BigDecimal result;
-        if (iso.equalsIgnoreCase("LTC")) {
+        if (iso.equalsIgnoreCase("PTC")) {
             result = BRExchange.getSatoshisForBitcoin(app, amount);
         } else {
             //multiply by 100 because core function localAmount accepts the smallest amount e.g. cents

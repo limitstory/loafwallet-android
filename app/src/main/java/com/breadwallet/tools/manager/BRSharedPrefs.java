@@ -274,28 +274,28 @@ public class BRSharedPrefs {
         editor.apply();
     }
 
-    //if the user prefers all in litecoin units, not other currencies
-    public static boolean getPreferredLTC(Context activity) {
+    //if the user prefers all in pyeongtaekcoin units, not other currencies
+    public static boolean getPreferredPTC(Context activity) {
         SharedPreferences prefs = activity.getSharedPreferences(BRConstants.PREFS_NAME, Context.MODE_PRIVATE);
-        return prefs.getBoolean("priceSetToLitecoin", true);
+        return prefs.getBoolean("priceSetToPyeongtaekcoin", true);
     }
 
-    //if the user prefers all in litecoin units, not other currencies
-    public static void putPreferredLTC(Context activity, boolean b) {
-        Timber.d("putPreferredLTC: %s", b);
+    //if the user prefers all in pyeongtaekcoin units, not other currencies
+    public static void putPreferredPTC(Context activity, boolean b) {
+        Timber.d("putPreferredPTC: %s", b);
         SharedPreferences prefs = activity.getSharedPreferences(BRConstants.PREFS_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
-        editor.putBoolean("priceSetToLitecoin", b);
+        editor.putBoolean("priceSetToPyeongtaekcoin", b);
         editor.apply();
     }
 
-    //if the user prefers all in litecoin units, not other currencies
+    //if the user prefers all in pyeongtaekcoin units, not other currencies
     public static boolean getUseFingerprint(Context activity) {
         SharedPreferences prefs = activity.getSharedPreferences(BRConstants.PREFS_NAME, Context.MODE_PRIVATE);
         return prefs.getBoolean("useFingerprint", false);
     }
 
-    //if the user prefers all in litecoin units, not other currencies
+    //if the user prefers all in pyeongtaekcoin units, not other currencies
     public static void putUseFingerprint(Context activity, boolean use) {
         SharedPreferences prefs = activity.getSharedPreferences(BRConstants.PREFS_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
@@ -368,7 +368,7 @@ public class BRSharedPrefs {
 
     public static int getCurrencyUnit(Context context) {
         SharedPreferences settingsToGet = context.getSharedPreferences(BRConstants.PREFS_NAME, 0);
-        return settingsToGet.getInt(BRConstants.CURRENT_UNIT, BRConstants.CURRENT_UNIT_LITECOINS);
+        return settingsToGet.getInt(BRConstants.CURRENT_UNIT, BRConstants.CURRENT_UNIT_PYEONGTAEKCOINS);
     }
 
     public static void putCurrencyUnit(Context context, int unit) {
